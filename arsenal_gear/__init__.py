@@ -6,7 +6,7 @@ A lightweight population synthesis code with an emphasis on the quantities
 relevant for stellar feedback from massive stars.
 """
 
-from . import dist_funcs, feedbacks, population, stellar_evolution
+from . import dist_funcs, feedbacks, population, stellar_evolution, element_yields
 
 import numpy as np
 import astropy.units as u
@@ -35,7 +35,7 @@ class StarMaker():
         self.tmin = 0.0*u.Myr
         self.tmax = 40.0*u.Myr
 
-        mbase = "<path-to-mist>"
+        mbase = "/Users/eric/Data/Isochrones/MIST/MIST_v1.2_vvcrit0.0_full_isos/"
         isofname = mbase + "MIST_v1.2_feh_p0.00_afe_p0.0_vvcrit0.0_full.iso"
         self.iso = stellar_evolution.isochrone.MIST(isofname)
 
